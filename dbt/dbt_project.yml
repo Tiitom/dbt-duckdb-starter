@@ -10,4 +10,7 @@ test-paths: ["tests"]
 
 models:
   dbt_case_study:
-    +materialized: table
+    - mart :
+      +materialized: table
+    - staging :
+      +materialized : view

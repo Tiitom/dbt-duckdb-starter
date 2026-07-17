@@ -1,11 +1,13 @@
 version: 2
 
 models:
-  - name: staging_sites
-    description: Staged research sites data from the raw sites seed.
+  - name: dim_sites
+    description: >
+      Site dimension table. One row per research center.
+      Sites are located in one country and can participate in multiple trials.
     columns:
       - name: site_id
-        description: Unique identifier for the research site (e.g. si_0001).
+        description: Primary key. Unique identifier for the research site (e.g. si_0001).
       - name: siteName
         description: Full name of the research center (e.g. "Smith LLC Research Center").
       - name: countryCode

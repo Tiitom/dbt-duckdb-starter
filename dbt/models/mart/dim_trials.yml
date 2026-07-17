@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: mart_trials
+  - name: dim_trials
     description: >
       Trial dimension table. One row per clinical trial.
       Each trial belongs to one sponsor and targets one indication.
