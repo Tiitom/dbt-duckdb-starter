@@ -7,7 +7,7 @@ with sites as (
 , final as (
 
   select
-    site_id
+    'SITE-' || site_id as site_id
     , siteName
     , countryCode
     , country_name
