@@ -33,9 +33,12 @@ final as (
     mp.patient_id
     , mp.trial_id
     , mp.site_id
-    , mp.processed_at
-    , mp.reviewed_at
-    , mp.enrolled_at
+    , case when mp.processed_at is not null then 'Yes' else 'No' end as is_processed_label
+    , case when mp.processed_at is not null then 1 else 0 end as is_processed_in
+    , case when mp.reviewed_at is not null then 'Yes' else 'No' end as is_reviewed_label
+    , case when mp.reviewed_at is not null then 1 else 0 end as is_reviewed_in
+    , case when mp.enrolled_at is not null then 'Yes' else 'No' end as is_enrolled_label
+    , case when mp.enrolled_at is not null then 1 else 0 end as is_enrolled_in
     , s.country_name
     , t.trial_name
     , sp.sponsor_name
